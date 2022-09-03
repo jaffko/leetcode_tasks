@@ -1,21 +1,6 @@
-﻿// I             1
-// V             5
-// X             10
-// L             50
-// C             100
-// D             500
-// M             1000
-// starts from largest to lowest for ex MCMXCIV = 1994, M = 1000, CM = 900, XC = 90 IV = 4
+﻿//Given a roman numeral (from 1 to 3999), convert it to an integer.
 
-//1. Берем index символ, если M, то + 1000, если D то +500, index +1
-// если C, то смотрим index + 1, если там D, то это 400, если M, то это + 900, index + 2, если другой, то +100 index +1
-// если L, то +50, index + 1
-// если X, то смотрим index + 1, если там L, то это 40, если там C, то это + 90, index + 2, если другое, то + 10 index +1
-// если V, то +5 index + 1
-// если I, то смотрим index + 1, если там V, то это 4, если там X, то это 9, index + 2, если другое, то это +1
-// во всех случаях с C, X, I проверка, index + 1 > s.Length перед условиями.
-
-Console.WriteLine("Enter Roman digit in range (1, 3999): ");
+Console.WriteLine("Enter Roman digit in range [1, 3999]: ");
 string? s = Console.ReadLine();
 int intNum = 0;
 int i = 0;

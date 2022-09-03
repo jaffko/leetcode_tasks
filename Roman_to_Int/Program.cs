@@ -15,14 +15,13 @@
 // если I, то смотрим index + 1, если там V, то это 4, если там X, то это 9, index + 2, если другое, то это +1
 // во всех случаях с C, X, I проверка, index + 1 > s.Length перед условиями.
 
-string s = "MMMCDLVIII";
+Console.WriteLine("Enter Roman digit in range (1, 3999): ");
+string? s = Console.ReadLine();
 int intNum = 0;
-int romLen = s.Length;
-char[] romChars = s.ToCharArray();
 int i = 0;
-while (i < romLen)
+while (i < s!.Length)
 {
-    switch (romChars[i])
+    switch (s[i])
     {
         case 'M':
         {
@@ -46,15 +45,15 @@ while (i < romLen)
         }
         case 'C':
         {
-            if (i + 1 >= romLen) intNum = intNum + 100;
+            if (i + 1 >= s.Length) intNum = intNum + 100;
             else 
             {
-                if (romChars[i+1]=='D') 
+                if (s[i+1]=='D') 
                 {
                     intNum = intNum + 400;
                     i++;
                 }
-                else if (romChars[i+1]=='M') 
+                else if (s[i+1]=='M') 
                 {
                     intNum = intNum + 900;
                     i++;
@@ -65,15 +64,15 @@ while (i < romLen)
         }
         case 'X':
         {
-            if (i + 1 >= romLen) intNum = intNum + 10;
+            if (i + 1 >= s.Length) intNum = intNum + 10;
             else 
             {
-                if (romChars[i+1]=='L') 
+                if (s[i+1]=='L') 
                 {
                     intNum = intNum + 40;
                     i++;
                 }
-                else if (romChars[i+1]=='C') 
+                else if (s[i+1]=='C') 
                 {
                     intNum = intNum + 90;
                     i++;
@@ -84,15 +83,15 @@ while (i < romLen)
         }
         case 'I':
         {
-            if (i + 1 >= romLen) intNum = intNum + 1;
+            if (i + 1 >= s.Length) intNum = intNum + 1;
             else 
             {
-                if (romChars[i+1]=='V') 
+                if (s[i+1]=='V') 
                 {
                     intNum = intNum + 4;
                     i++;
                 }
-                else if (romChars[i+1]=='X') 
+                else if (s[i+1]=='X') 
                 {
                     intNum = intNum + 9;
                     i++;
